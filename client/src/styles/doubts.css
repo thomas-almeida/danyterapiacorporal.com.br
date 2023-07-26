@@ -1,0 +1,22 @@
+.doubts-container {
+    position: absolute;
+    top: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    background-color: #00000088;
+}
+
+.doubts-container-content {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+    height: 85%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 20px;
+}
+
+.doubts-container-content h2 {
+    margin-top: 25px;
+}
