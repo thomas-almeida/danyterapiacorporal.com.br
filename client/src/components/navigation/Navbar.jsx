@@ -10,6 +10,10 @@ export default function Navbar() {
         setShowDoubtsModal(true)
     }
 
+    const handleCloseDoubtsModal = () => {
+        setShowDoubtsModal(false)
+    }
+
     return (
         <>
             <nav>
@@ -25,8 +29,10 @@ export default function Navbar() {
                 </ul>
             </nav>
 
-            {showDoubtsModal && <Doubts />}
-
+            <Doubts 
+                show={showDoubtsModal} 
+                onClose={handleCloseDoubtsModal} 
+            />
         </>
     )
 }
