@@ -2,7 +2,7 @@
     position: absolute;
     top: 0;
     width: -webkit-fill-available;
-    height: 100vh;
+    height: -webkit-fill-available;
     background-color: #00000088;
 }
 
