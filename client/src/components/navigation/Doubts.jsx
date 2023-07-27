@@ -1,9 +1,9 @@
 
 import Accordion from "./Accordion"
 
-export default function Doubts({show, onClose}) {
+export default function Doubts({ show, onClose }) {
 
-    if(!show) {
+    if (!show) {
         return null
     }
 
@@ -13,14 +13,31 @@ export default function Doubts({show, onClose}) {
                 <div className="doubts-container-content">
                     <h2>Perguntas Frequentes</h2>
 
-                    <div>
-                       <Accordion 
-                            doubtName="Quais os serviços oferecidos" 
-                            doubtAnswer="Os serviços oferecidos são A, B, C" 
+                    <div className="accordion-items">
+
+                        <Accordion
+                            doubtName="Quais os serviços oferecidos?"
+                            doubtAnswer="Os serviços oferecidos são: Serviço A, serviço B e serviço C, você pode ver todos eles navegando no site."
                         />
+
+                        <Accordion
+                            doubtName="Como funciona o agendamento?"
+                            doubtAnswer="O pagamento é feito ao chegar no local, antes do seu atendimento marcado."
+                        />
+
+                        <Accordion
+                            doubtName="Qual o valor dos serviços?"
+                            doubtAnswer="Os valores variam de acordo com cada um dos tratamentos, voce pode encontrar os valores navegando no site"
+                        />
+
+                        <Accordion
+                            doubtName="Quanto tempo duram as sessões?"
+                            doubtAnswer="As sessões duram cerca de 1 hora cada."
+                        />
+
                     </div>
 
-                    <button onClick={onClose} className="button confirm-button">Entendi!</button>
+                    <button onClick={onClose} className="button confirm-button fix-bottom">Entendi!</button>
 
                 </div>
             </div>
