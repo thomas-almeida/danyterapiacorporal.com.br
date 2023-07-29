@@ -1,11 +1,11 @@
 
-import {useState} from "react"
+import { useState } from "react"
 import Doubts from "./Doubts"
 
 export default function Navbar() {
 
     const [showDoubtsModal, setShowDoubtsModal] = useState(false)
-    
+
     const handleShowDoubtsModal = () => {
         setShowDoubtsModal(true)
     }
@@ -19,19 +19,19 @@ export default function Navbar() {
             <nav>
                 <ul>
                     <li>
-                        <a href="#">
-                            <img src="/vite.svg" alt="logo" />
+                        <a href="/">
+                            <img src="/logo.svg" alt="logo" />
                         </a>
                     </li>
                     <li onClick={handleShowDoubtsModal}>
-                        Dúvidas?
+                        <b>Dúvidas?</b>
                     </li>
                 </ul>
             </nav>
 
-            <Doubts 
-                show={showDoubtsModal} 
-                onClose={handleCloseDoubtsModal} 
+            <Doubts
+                show={showDoubtsModal}
+                onClose={handleCloseDoubtsModal}
             />
         </>
     )
