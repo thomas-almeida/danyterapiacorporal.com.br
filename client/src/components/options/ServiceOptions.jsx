@@ -4,7 +4,7 @@ import services from "./services"
 export default function ServiceOptions() {
 
   return (
-    <div className="">
+    <div className="service-options-container">
       {
         services.map(service => (
           <label key={service.id}>

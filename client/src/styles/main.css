@@ -1,6 +1,7 @@
 @import url(doubts.css);
 @import url(fonts.css);
 @import url(navbar.css);
+@import url(form.css);
 * {
     margin: 0;
     padding: 0;
@@ -52,4 +53,17 @@ p {
 .confirm-button {
     color: #fff;
     background: #128C7E;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container-content {
+    width: 90%;
+}
+
+.my-low {
+    margin: 20px 0px;
 }
