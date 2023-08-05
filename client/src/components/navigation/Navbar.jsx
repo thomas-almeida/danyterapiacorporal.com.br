@@ -26,7 +26,9 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/agendamento">Agendamento</NavLink>
+                        <NavLink to="/agendamento">
+                            <p>Agendamento</p>
+                        </NavLink>
                     </li>
                     <li onClick={handleShowDoubtsModal}>
                         <p>Dúvidas?</p>
