@@ -1,6 +1,8 @@
 
 import { useState } from "react"
 import Doubts from "./Doubts"
+import { NavLink } from "react-router-dom"
+import Scheduling from "../pages/Scheduling"
 
 export default function Navbar() {
 
@@ -19,12 +21,15 @@ export default function Navbar() {
             <nav>
                 <ul>
                     <li>
-                        <a href="/">
+                        <NavLink to="/">
                             <img src="/logo.svg" alt="logo" />
-                        </a>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/agendamento">Agendamento</NavLink>
                     </li>
                     <li onClick={handleShowDoubtsModal}>
-                        <b>Dúvidas?</b>
+                        <p>Dúvidas?</p>
                     </li>
                 </ul>
             </nav>
