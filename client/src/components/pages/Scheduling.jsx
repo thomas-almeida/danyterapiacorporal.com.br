@@ -49,8 +49,13 @@ export default function Scheduling() {
         }
 
         try {
+            
             const response = await axios.post(endpoint, requestBody, { headers })
             console.log('Response:', response.data)
+
+            window.location.href = '/agendamento/obrigado'
+
+
         } catch (error) {
             console.log('Error', error)
             alert('Erro na Requisição', error)
