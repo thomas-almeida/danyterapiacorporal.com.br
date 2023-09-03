@@ -84,7 +84,7 @@ export default function Scheduling() {
 
     return (
         <div className="container">
-            <div className="container-content">
+            <div className="container-content" id="topo">
 
                 <h2 className="my-low">Agendar Horário</h2>
                 <p>
@@ -96,14 +96,14 @@ export default function Scheduling() {
                     <form action="" method="POST" onSubmit={handleSubmit}>
 
                         <label htmlFor="nome">Seu Nome</label>
-                        <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" />
+                        <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required/>
 
                         <label htmlFor="whatsapp" id="whatsapp-label">Whatsapp</label>
-                        <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" />
+                        <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required/>
 
                         <h4>Selecione o Serviço</h4>
                         <p>
-                            Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a href="/">por aqui.</a>
+                            Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a className="link" href="/#pacotes">por aqui.</a>
                         </p>
                         <ServicesOptions
                             selectedServices={formData.servicos}
@@ -111,10 +111,11 @@ export default function Scheduling() {
                         />
 
                         <label htmlFor="data">Selecione uma Data</label>
-                        <input type="date" name="data" id="data" onChange={handleInputChange} />
+                        <p className="tip"></p>
+                        <input type="date" name="data" id="data" onChange={handleInputChange} required/>
 
                         <label htmlFor="horario">Selecione um Horário</label>
-                        <input type="time" name="horario" id="horario" onChange={handleInputChange} />
+                        <input type="time" name="horario" id="horario" onChange={handleInputChange} required/>
 
                         <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
                         <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />

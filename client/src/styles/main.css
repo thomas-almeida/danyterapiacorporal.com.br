@@ -2,10 +2,16 @@
 @import url(fonts.css);
 @import url(navbar.css);
 @import url(form.css);
+@import url(service-card.css);
 * {
     margin: 0;
     padding: 0;
     font-family: 'League Spartarn', sans-serif;
+}
+
+h1 {
+    padding: 20px 0px;
+    line-height: 120%;
 }
 
 h2 {
@@ -15,6 +21,7 @@ h2 {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    padding: 20px 0px;
 }
 
 h3 {
@@ -23,6 +30,7 @@ h3 {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    padding: 10px 0px;
 }
 
 a {
@@ -36,7 +44,13 @@ p {
     font-style: normal;
     font-weight: 500;
     line-height: 25px;
-    /* 125% */
+    padding: 10px 0px;
+}
+
+#endereco {
+    text-decoration: none;
+    color: dodgerblue;
+    font-weight: 600;
 }
 
 .button {
@@ -59,6 +73,11 @@ p {
     background: #128C7E;
 }
 
+.whatsapp-button {
+    color: #fff;
+    background: #25d366;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -70,4 +89,25 @@ p {
 
 .my-low {
     margin: 20px 0px;
+}
+
+.item-spaces {
+    padding: 10px 0px;
+    margin: 10px 0px;
+}
+
+.divider-title {
+    padding-top: 60px;
+}
+
+.image-galery {
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.link {
+    text-decoration: none;
+    color: dodgerblue;
+    font-family: League Spartan;
+    font-size: 22px;
 }
