@@ -17,8 +17,10 @@ export default function Scheduling() {
     })
 
 
-    const requestMessage = `
-    Novo Agendamento!
+    const requestMessage = 
+    `
+    🕐 Novo Agendamento!
+
     Nome: ${formData.nome},
     Whatsapp: ${formData.whatsapp},
     Data Sugerida: ${formData.data},
