@@ -17,6 +17,19 @@ export default function Scheduling() {
     })
 
 
+    const requestMessage = `
+    Novo Agendamento!
+    Nome: ${formData.nome},
+    Whatsapp: ${formData.whatsapp},
+    Data Sugerida: ${formData.data},
+    Horário: ${formData.horario},
+    Indicação: ${formData.indicacao},
+    Serviços: ${formData.servicos},`
+
+    const payload = {
+        "message": requestMessage
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault()
 
@@ -24,7 +37,7 @@ export default function Scheduling() {
         const endpoint = `http://localhost:${backendPort}/send-schedule`
 
         try {
-            const response = await axios.post(endpoint, formData)
+            const response = await axios.post(endpoint, payload)
             if (response.data.success) {
                 console.log('Enviado')
             } else {

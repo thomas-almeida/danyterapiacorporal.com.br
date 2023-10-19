@@ -7,6 +7,7 @@ const app = express()
 const port = 3000
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(express.static('public'))
 app.use(cors())
 
@@ -15,7 +16,7 @@ let clientInstance
 venom
     .create({
         session: 'api',
-        multidevice: true //name of session
+        multidevice: true
     })
     .then((client) => {
         clientInstance = client
@@ -42,10 +43,11 @@ function start(client) {
 
 app.post('/send-schedule', (req, res) => {
     const { message } = req.body
+    const number = '5511949098312@c.us'
 
     if (clientInstance) {
         clientInstance
-            .sendText('5511949098312@c.us', message)
+            .sendText(number, message)
             .then((result) => {
                 res.json({ success: true, message: 'Mensagem enviada!' })
             })
