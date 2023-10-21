@@ -8,7 +8,11 @@
     ],
     "routes": [
         {
-            "src": "(.*)",
+            "src": "/cowsay",
+            "dest": "index.js"
+        },
+        {
+            "src": "/send-schedule",
             "dest": "index.js"
         }
     ]
