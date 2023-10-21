@@ -1,19 +1,8 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/cowsay",
-            "dest": "index.js"
-        },
-        {
-            "src": "/send-schedule",
-            "dest": "index.js"
+            "source": "/(.*)",
+            "destination": "/api"
         }
     ]
 }
