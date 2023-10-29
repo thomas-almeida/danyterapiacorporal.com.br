@@ -35,8 +35,7 @@ export default function Scheduling() {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const backendPort = 3001
-        const endpoint = `http://localhost:${backendPort}/send-schedule`
+        const endpoint = `https://nino-scheduler-api.onrender.com/send-schedule`
 
         try {
             const response = await axios.post(endpoint, payload)
