@@ -6,7 +6,6 @@ import ServicesOptions from "../options/ServiceOptions"
 
 export default function Scheduling() {
 
-    // state que atualiza os dados do form
     const [formData, setFormData] = useState({
         nome: "",
         whatsapp: "",
@@ -16,52 +15,35 @@ export default function Scheduling() {
         servicos: []
     })
 
-    // Evento que envia a requisição de mensagem
     const handleSubmit = async (event) => {
+        event.preventDefault();
 
-        event.preventDefault()
+        const endpoint = "https://nino-scheduler-api.onrender.com/send-schedule";
 
-        const endpoint = "https://api.zenvia.com/v2/channels/whatsapp/messages"
-        const headers = {
-            "Content-Type": "application/json",
-            "X-API-TOKEN": "zb5zBa0eDUzulsypi2I69x-772g6X47ivOM6"
-        }
-
-        const messageContents = 
-        `💆🏻‍♀️💆🏻‍♂️🌷 Novo Agendamento 💆🏻‍♀️💆🏻‍♂️🌷\n
-        Um novo agendamento foi feito no site.\n
-        Nome: ${formData.nome},\n
-        WhatsApp: ${formData.whatsapp},\n
-        Data: ${formData.data},\n
-        Horário: ${formData.horario},\n
-        Serviços: ${formData.servicos.join(", ") + '\n' },\n
-        Código: ${formData.indicacao || "Nenhum"}.\n`
-
-        const requestBody = {
-            from: "cuddly-kilogram",
-            to: "5511949098312",
-            contents: [
-                {
-                    type: "text",
-                    text: messageContents
-                }
-            ]
-        }
+        const messageContents = {
+            mensagem: `✉️Novo Agendamento.
+            ✅ Nome: ${formData.nome},
+            ✅ WhatsApp: ${formData.whatsapp},
+            ✅ Data: ${formData.data},
+            ✅ Horário: ${formData.horario},
+            ✅ Serviços: ${formData.servicos.join(", ")},
+            ✅ Código: ${formData.indicacao || "Nenhum"}.`
+        };
 
         try {
-            
-            const response = await axios.post(endpoint, requestBody, { headers })
-            console.log('Response:', response.data)
-
-            window.location.href = '/agendamento/obrigado'
-
-
+            const response = await axios.post(endpoint, messageContents, {
+                headers: {
+                    'Content-Type': 'application/json', // Configurar o cabeçalho para JSON
+                },
+            });
+            console.log('Response:', response.data);
+            window.location.href = '/agendamento/obrigado';
         } catch (error) {
-            console.log('Error', error)
-            alert('Erro na Requisição', error)
+            console.log('Error', error);
+            alert('Erro na Requisição', error);
         }
+    };
 
-    }
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -77,10 +59,9 @@ export default function Scheduling() {
             ...prevData,
             servicos: checked
                 ? [...prevData.servicos, value]
-                : prevData.servicos.filter((service) => service != value)
+                : prevData.servicos.filter((service) => service !== value)
         }))
     }
-
 
     return (
         <div className="container">
@@ -96,10 +77,10 @@ export default function Scheduling() {
                     <form action="" method="POST" onSubmit={handleSubmit}>
 
                         <label htmlFor="nome">Seu Nome</label>
-                        <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required/>
+                        <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required />
 
                         <label htmlFor="whatsapp" id="whatsapp-label">Whatsapp</label>
-                        <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required/>
+                        <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required />
 
                         <h4>Selecione o Serviço</h4>
                         <p>
@@ -112,10 +93,10 @@ export default function Scheduling() {
 
                         <label htmlFor="data">Selecione uma Data</label>
                         <p className="tip"></p>
-                        <input type="date" name="data" id="data" onChange={handleInputChange} required/>
+                        <input type="date" name="data" id="data" onChange={handleInputChange} required />
 
                         <label htmlFor="horario">Selecione um Horário</label>
-                        <input type="time" name="horario" id="horario" onChange={handleInputChange} required/>
+                        <input type="time" name="horario" id="horario" onChange={handleInputChange} required />
 
                         <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
                         <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />
