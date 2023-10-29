@@ -35,7 +35,7 @@ export default function Scheduling() {
         try {
             const response = await axios.post(endpoint, messageContents, {
                 headers: {
-                    'Content-Type': 'application/json', // Configurar o cabeçalho para JSON
+                    'Content-Type': 'application/json',
                 },
             });
             console.log('Response:', response.data);
