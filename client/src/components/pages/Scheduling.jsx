@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import axios from "axios"
+import { format } from "date-fns"
 import ServicesOptions from "../options/ServiceOptions"
 
 
@@ -19,12 +20,13 @@ export default function Scheduling() {
         event.preventDefault();
 
         const endpoint = "https://nino-scheduler-api.onrender.com/send-schedule";
+        const formatedDate = format(new Date(formData.data), "dd/MM/yyyy")
 
         const messageContents = {
             mensagem: `✉️Novo Agendamento.
             ✅ Nome: ${formData.nome},
             ✅ WhatsApp: ${formData.whatsapp},
-            ✅ Data: ${formData.data},
+            ✅ Data: ${formData.formatedDate},
             ✅ Horário: ${formData.horario},
             ✅ Serviços: ${formData.servicos.join(", ")},
             ✅ Código: ${formData.indicacao || "Nenhum"}.`
