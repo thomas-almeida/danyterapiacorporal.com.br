@@ -26,7 +26,7 @@ export default function Scheduling() {
             mensagem: `✉️Novo Agendamento.
             ✅ Nome: ${formData.nome},
             ✅ WhatsApp: ${formData.whatsapp},
-            ✅ Data: ${formData.formatedDate},
+            ✅ Data: ${formatedDate},
             ✅ Horário: ${formData.horario},
             ✅ Serviços: ${formData.servicos.join(", ")},
             ✅ Código: ${formData.indicacao || "Nenhum"}.`
