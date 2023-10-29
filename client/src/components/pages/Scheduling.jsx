@@ -39,7 +39,7 @@ export default function Scheduling() {
                 },
             });
             console.log('Response:', response.data);
-            window.location.href = '/agendamento/obrigado';
+            window.location.href = '/obrigado';
         } catch (error) {
             console.log('Error', error);
             alert('Erro na Requisição', error);
