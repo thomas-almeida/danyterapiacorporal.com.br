@@ -35,7 +35,7 @@ export default function Scheduling() {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const backendPort = 3000
+        const backendPort = 3001
         const endpoint = `http://localhost:${backendPort}/send-schedule`
 
         try {
