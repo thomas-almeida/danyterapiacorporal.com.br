@@ -1,4 +1,4 @@
-
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from "./components/navigation/Navbar"
 
 import { Routes, Route } from 'react-router-dom'
@@ -15,6 +15,7 @@ function App() {
         <Route path="/agendamento" element={<Scheduling />} />
         <Route path="/agendamento/obrigado" element={<Thanks />} />
       </Routes>
+      <Analytics/>
     </>
   )
 }
