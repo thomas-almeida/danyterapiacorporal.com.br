@@ -1,7 +1,6 @@
 
 import { NavLink } from "react-router-dom"
 import ServiceCard from "../ui/ServiceCard"
-import InstagramEmbed from "react-instagram-embed"
 
 export default function Home() {
 
@@ -93,12 +92,6 @@ export default function Home() {
                         <img src="" alt="Terapia corporal" />
                         <img src="" alt="Terapia corporal" />
                     </div>
-
-                    <InstagramEmbed
-                        url="https://www.instagram.com/p/CoUWWzTOlrs"
-                        maxWidth={300}
-                        hideCaption={false}
-                    />
 
                     <a href="#">veja mais no instagram</a>
 
