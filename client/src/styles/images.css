@@ -1,0 +1,11 @@
+.image-galery{
+    padding: 5px;
+}
+
+.image-galery img{
+    width: 100%;
+    height: 300px;
+    max-width: 500px;
+    margin: 4px;
+    border-radius: 3px;
+}
