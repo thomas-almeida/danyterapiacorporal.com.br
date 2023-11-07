@@ -3,9 +3,16 @@ import { useState } from "react"
 import axios from "axios"
 import { format } from "date-fns"
 import ServicesOptions from "../options/ServiceOptions"
+import InfoModal from "../navigation/InfoModal"
 
 
 export default function Scheduling() {
+
+    const [isInfoModalOpened, setInfoModalOpen] = useState(false)
+    const modalInfos = {
+        succesInfo: 'Sucesso',
+        succesInfoMessage: 'Mensagem de sucesso de envio'
+    }
 
     const [formData, setFormData] = useState({
         nome: "",
@@ -39,7 +46,7 @@ export default function Scheduling() {
                 },
             });
             console.log('Response:', response.data);
-            window.location.href = '/obrigado';
+            setInfoModalOpen(true)
         } catch (error) {
             console.log('Error', error);
             alert('Erro na Requisição', error);
@@ -106,6 +113,16 @@ export default function Scheduling() {
                         <input type="submit" className="button confirm-button" value="Confirmar Agendamento" />
 
                     </form>
+
+                    {
+                        isInfoModalOpened && (
+                            <InfoModal 
+                                info={modalInfos.succesInfo}
+                                message={modalInfos.succesInfoMessage}
+                            />
+                        )
+                    }    
+
                 </div>
             </div>
 

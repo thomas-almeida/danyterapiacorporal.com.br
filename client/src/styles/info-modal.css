@@ -1,0 +1,18 @@
+.info-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.578);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    z-index: 9999;
+}
+
+.info-modal-content{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 7px;
+}

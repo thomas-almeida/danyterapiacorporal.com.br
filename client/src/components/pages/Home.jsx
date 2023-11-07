@@ -7,7 +7,7 @@ export default function Home() {
     const address = 'https://www.google.com.br/maps/place/R.+Clevel%C3%A2ndia,+128a+-+Cidade+Patriarca,+S%C3%A3o+Paulo+-+SP,+03555-050/@-23.5383317,-46.5014327,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce60b5234cb645:0x1029950f1ac6c1c!8m2!3d-23.5383366!4d-46.4988578!16s%2Fg%2F11fkr31j57?entry=ttu'
 
     const images = [
-        'public/image-0.jpg', 'public/image-1.jpg', 'c'
+        'public/image-0.jpg', 'public/image-1.jpg'
     ]
 
     return (
@@ -90,7 +90,6 @@ export default function Home() {
                     <div className="image-galery">
                         <img src={images[0]} alt="Terapia corporal - local de atendimento" />
                         <img src={images[1]} alt="Terapia corporal - local de atendimento" />
-                        <img src={images[2]} alt="Terapia corporal -  local de atendimento" />
                     </div>
 
                     <a href="#">veja mais no instagram</a>
