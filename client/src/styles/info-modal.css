@@ -14,5 +14,6 @@
 .info-modal-content{
     background-color: #fff;
     padding: 25px;
+    margin: 25px;
     border-radius: 7px;
 }
