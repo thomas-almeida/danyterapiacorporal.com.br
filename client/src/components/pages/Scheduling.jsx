@@ -10,7 +10,7 @@ export default function Scheduling() {
 
     const [isInfoModalOpened, setInfoModalOpen] = useState(false)
     const modalInfos = {
-        succesInfo: 'Quase lá!',
+        succesInfo: 'Agora é com a Dany!',
         succesInfoMessage: 'Seu agendamento foi feito com sucesso!, em alguns instantes entraremos em contato para confirmar seu atendimento.'
     }
 
