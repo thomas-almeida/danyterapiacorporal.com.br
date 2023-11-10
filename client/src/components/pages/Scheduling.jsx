@@ -10,8 +10,8 @@ export default function Scheduling() {
 
     const [isInfoModalOpened, setInfoModalOpen] = useState(false)
     const modalInfos = {
-        succesInfo: 'Sucesso',
-        succesInfoMessage: 'Mensagem de sucesso de envio'
+        succesInfo: 'Quase lá!',
+        succesInfoMessage: 'Seu agendamento foi feito com sucesso!, em alguns instantes entraremos em contato para confirmar seu atendimento.'
     }
 
     const [formData, setFormData] = useState({
@@ -116,12 +116,12 @@ export default function Scheduling() {
 
                     {
                         isInfoModalOpened && (
-                            <InfoModal 
+                            <InfoModal
                                 info={modalInfos.succesInfo}
                                 message={modalInfos.succesInfoMessage}
                             />
                         )
-                    }    
+                    }
 
                 </div>
             </div>
