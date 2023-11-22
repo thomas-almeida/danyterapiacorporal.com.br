@@ -6,6 +6,7 @@ export default function InfoModal({ info, message }) {
 
     const closeModal = () => {
         setModalOpen(false)
+        window.location.href = '/'
     }
 
     const modalStyle = {
