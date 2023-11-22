@@ -3,7 +3,7 @@ form {
 }
 
 label {
-    color: #128C7E;
+    color: #cd885d;
     font-family: League Spartan;
     font-size: 24px;
     font-style: normal;
@@ -36,7 +36,7 @@ input[type="text"]::placeholder {
 }
 
 form h4 {
-    color: #128C7E;
+    color: #cd885d;
     font-family: League Spartan;
     font-size: 24px;
     font-style: normal;

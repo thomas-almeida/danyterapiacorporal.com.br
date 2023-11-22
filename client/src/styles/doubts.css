@@ -53,13 +53,13 @@
 .accordion-head h3 {
     width: 75%;
     line-height: 25px;
-    color: #128C7E;
+    color: #cd885d;
 }
 
 .accordion-head span {
     width: 25%;
     text-align: center;
-    color: #128C7E;
+    color: #cd885d;
 }
 
 .accordion-head ion-icon {

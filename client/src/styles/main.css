@@ -15,10 +15,12 @@
 h1 {
     padding: 20px 0px;
     line-height: 120%;
+    color: #cd885d;
+    font-weight: bold;
 }
 
 h2 {
-    color: #128C7E;
+    color: #cd885d;
     font-family: League Spartan;
     font-size: 29px;
     font-style: normal;
@@ -52,7 +54,7 @@ p {
 
 #endereco {
     text-decoration: none;
-    color: dodgerblue;
+    color: #cd885d;
     font-weight: 600;
 }
 
@@ -83,7 +85,7 @@ p {
 
 .confirm-button {
     color: #fff;
-    background: #128C7E;
+    background: #cd885d;
 }
 
 .whatsapp-button {

@@ -21,7 +21,7 @@ export default function Navbar() {
                 <ul>
                     <li>
                         <NavLink to="/">
-                            <img src="/logo.svg" alt="logo" />
+                            <img src="/dany-logoB.svg" alt="logo" />
                         </NavLink>
                     </li>
                     <li onClick={handleShowDoubtsModal}>
