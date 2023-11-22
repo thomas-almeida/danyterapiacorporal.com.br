@@ -1,6 +1,7 @@
 
 import { NavLink } from "react-router-dom"
 import ServiceCard from "../ui/ServiceCard"
+import ButtonIcon from "../navigation/ButtonIcon"
 
 export default function Home() {
 
@@ -20,13 +21,20 @@ export default function Home() {
                         Cuide de você com Terapia Corporal e melhore sua qualidade de vida, agende um horário para cuidar do seu bem-estar.
                     </p>
 
-                    <a href={address} target="_blank" id="endereco">Rua Endereço A, 123 - Bairro</a>
+                    <a href={address} target="_blank" id="endereco">Rua Endereço ABC, 123 - Bairro</a>
 
                     <div className="item-spaces">
                         <NavLink to="/agendamento#topo">
-                            <button className="button confirm-button">Agendar um horário</button>
+                            <ButtonIcon
+                                image="/ring-calendar.png"
+                                text="Agendar um horário"
+                            />
                         </NavLink>
-                        <button className="button whatsapp-button">Tirar Dúvidas no Whatsapp</button>
+                        <ButtonIcon
+                            image="/whatsapp.png"
+                            text="Tirar Dúvidas no Whatsapp"
+                            specialStyleSheet="whatsapp-button"
+                        />
                     </div>
 
                     <h2 className="divider-title">Serviços</h2>
@@ -75,9 +83,16 @@ export default function Home() {
                         </p>
 
                         <p>
-                            Escolhe entre x seriviços e marque seus atendimentos no mes, feche pacotes conosco através do whatsapp
+                            Escolha entre  serviços e marque seus atendimentos no mês, feche pacotes conosco através do whatsapp
                         </p>
-                        <button className="button whatsapp-button">Sobre Pacotes</button>
+
+                        <NavLink to="https://wa.link/ligqqv">
+                            <ButtonIcon
+                                image="/whatsapp.png"
+                                text="Sobre Pacotes"
+                                specialStyleSheet="whatsapp-button"
+                            />
+                        </NavLink>
                     </div>
 
                     <br />
@@ -92,7 +107,16 @@ export default function Home() {
                         <img src={images[1]} alt="Terapia corporal - local de atendimento" />
                     </div>
 
-                    <a href="#">veja mais no instagram</a>
+                    <NavLink to="https://www.instagram.com/danyterapia/">
+                        <ButtonIcon
+                            image="/instagram.png"
+                            text="Veja Mais no Instagram"
+                            specialStyleSheet="instagram-button"
+                        />
+                    </NavLink>
+
+                    <br />
+                    <br />
 
                     <p>
                         Não deixe o bem-estar do seu corpo e mente para depois!, começe a cuidar de voce hoje mesmo!
@@ -100,9 +124,18 @@ export default function Home() {
 
                     <div className="item-spaces">
                         <NavLink to="/agendamento#topo">
-                            <button className="button confirm-button">Agendar um horário</button>
+                            <ButtonIcon
+                                image="/ring-calendar.png"
+                                text="Agendar um horário"
+                            />
                         </NavLink>
-                        <button className="button whatsapp-button">Tirar Dúvidas no Whatsapp</button>
+                        <NavLink to="https://wa.link/ligqqv">
+                            <ButtonIcon
+                                image="/whatsapp.png"
+                                text="Tirar Dúvidas no Whatsapp"
+                                specialStyleSheet="whatsapp-button"
+                            />
+                        </NavLink>
                     </div>
 
                 </div>

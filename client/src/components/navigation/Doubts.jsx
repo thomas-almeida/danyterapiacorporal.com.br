@@ -1,5 +1,6 @@
 
 import Accordion from "./Accordion"
+import ButtonIcon from "./ButtonIcon"
 
 export default function Doubts({ show, onClose }) {
 
@@ -37,7 +38,11 @@ export default function Doubts({ show, onClose }) {
 
                     </div>
 
-                    <button onClick={onClose} className="button confirm-button fix-bottom">Entendi!</button>
+                    <ButtonIcon
+                        image="/confirm.png"
+                        text="Entendi"
+                        method={onClose}
+                    />
 
                 </div>
             </div>

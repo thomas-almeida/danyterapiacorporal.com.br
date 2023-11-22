@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ButtonIcon from "./ButtonIcon"
 
 export default function InfoModal({ info, message }) {
 
@@ -19,9 +20,11 @@ export default function InfoModal({ info, message }) {
                 <div className="info-modal-content">
                     <h2>{info}</h2>
                     <p>{message}</p>
-                    <button className="button confirm-button" onClick={closeModal}>
-                        Entendi
-                    </button>
+                    <ButtonIcon
+                        image="/confirm.png"
+                        text="Entendi"
+                        method={closeModal}
+                    />
                 </div>
             </div>
         </>
