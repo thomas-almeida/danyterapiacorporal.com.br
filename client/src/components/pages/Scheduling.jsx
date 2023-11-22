@@ -9,6 +9,7 @@ import InfoModal from "../navigation/InfoModal"
 export default function Scheduling() {
 
     const [isInfoModalOpened, setInfoModalOpen] = useState(false)
+    const [isLoading, setloading] = useState(false)
     const modalInfos = {
         succesInfo: 'Agora é com a Dany!',
         succesInfoMessage: 'Seu agendamento foi feito com sucesso!, em alguns instantes entraremos em contato para confirmar seu atendimento.'
@@ -26,11 +27,13 @@ export default function Scheduling() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        setloading(true)
+
         const endpoint = "https://nino-scheduler-api.onrender.com/send-schedule";
         const formatedDate = format(new Date(formData.data), "dd/MM/yyyy")
 
         const messageContents = {
-            mensagem: `✉️Novo Agendamento.
+            mensagem: `✉️ Novo Agendamento.
             ✅ Nome: ${formData.nome},
             ✅ WhatsApp: ${formData.whatsapp},
             ✅ Data: ${formatedDate},
@@ -40,16 +43,17 @@ export default function Scheduling() {
         };
 
         try {
-            const response = await axios.post(endpoint, messageContents, {
+            await axios.post(endpoint, messageContents, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log('Response:', response.data);
             setInfoModalOpen(true)
         } catch (error) {
             console.log('Error', error);
             alert('Erro na Requisição', error);
+        } finally{
+            setloading(false)
         }
     };
 
@@ -83,7 +87,7 @@ export default function Scheduling() {
 
                 <div className="container my-low">
 
-                    <form action="" method="POST" onSubmit={handleSubmit}>
+                    <form action="" method="POST" onSubmit={handleSubmit} disabled={isLoading}> 
 
                         <label htmlFor="nome">Seu Nome</label>
                         <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required />
@@ -110,7 +114,12 @@ export default function Scheduling() {
                         <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
                         <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />
 
-                        <input type="submit" className="button confirm-button" value="Confirmar Agendamento" />
+                        <input 
+                            type="submit" 
+                            className="button confirm-button" 
+                            value={isLoading ? "Aguarde..." : "Confirmar Agendamento"} 
+                            disabled={isLoading}
+                        />
 
                     </form>
 
