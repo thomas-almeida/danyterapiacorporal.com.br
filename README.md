@@ -1,5 +1,7 @@
 # Dany Terapia Corporal - Landing Page MVP
 
+![screenshot do projeto](client/public/project-screeshot.png)
+
 ## Landing Page de agendamentos para a clínica de estética da minha mãe
 ### Tecnologias: ReactJS | Node com API do Telegram | Vercel e Render para hospedagens
 Criei esse projeto com o intuito e necessidade de trazer novos contatos e possíveis clientes para o negócio, assim o espaço de estética não teria apenas a fonte organica e boca a boca como meio de trazer clientes, e sim de uma forma constante com uma landing page que possa receber o envio de agendamentos de uma forma centralizada e usando tecnologias do front-end e construindo um backend simples com uma integração que centralizasse e armazenasse os agendamentos. Dito isso, este projeto tem 3 pontos de destaque:
@@ -9,3 +11,4 @@ Criei esse projeto com o intuito e necessidade de trazer novos contatos e possí
 + Anunciar no Google de forma assertiva: bom, não é apenas criar a landing page que faz ela bombar no tráfego, então estudar formas de alimentar o tráfego e trazer assertividade aos agendamentos é essencial e a pricipal "feature" que a LP deve atender, no final de tudo, o MVP deve cumprir seu papel trazendo resultados concretos e monetizando o projeto. saber anunciar e gerir o tráfego da landing page é o real e principal desafio deste projeto.
 
 Contudo, pretendo continuar atualzando e otimizando este pronjeto com a esperança que este MVP cresça e seja um canal de captação que impulsione o negócio da minha mãe novamente e escale o negócio, fazendo ele ser uma fonte de trabalho duro e muito sucesso!
+Voce pode acompanhar a trilha de desenvolvimento e roadmap das tarefas [por aqui](https://purrfect-blarney-e5a.notion.site/73a04579b755479aba9cdd0f4b804e9f?v=1f8ca229f65e4c89a39bebf1556561f6&pvs=4)
