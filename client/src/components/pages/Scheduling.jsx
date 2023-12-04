@@ -75,7 +75,7 @@ export default function Scheduling() {
                 ? [...prevData.servicos, value]
                 : prevData.servicos.filter((service) => service !== value)
         }))
-    }1
+    }
 
     return (
         <div className="container">
