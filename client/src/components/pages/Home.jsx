@@ -2,6 +2,7 @@
 import { NavLink } from "react-router-dom"
 import ServiceCard from "../ui/ServiceCard"
 import ButtonIcon from "../navigation/ButtonIcon"
+import services from "../options/services"
 
 export default function Home() {
 
@@ -45,35 +46,21 @@ export default function Home() {
 
                     <h2>Avulsos, pagamento por atendimento</h2>
 
-                    <ServiceCard
-                        serviceName="Massagem Terapeutica"
-                        servicePrice="R$ 100,00/1h"
-                        serviceDescription="Serviço A sendo detalhado de forma simples."
-                    />
+                    <div>
+                        {
+                            services.map((service) => {
+                                return (
+                                    <ServiceCard
+                                        key={service.id}
+                                        serviceName={service.name}
+                                        servicePrice={service.price}
+                                        serviceDescription={service.description}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
 
-                    <ServiceCard
-                        serviceName="Massagem Relaxante"
-                        servicePrice="R$ 100,00/1h"
-                        serviceDescription="Serviço A sendo detalhado de forma simples."
-                    />
-
-                    <ServiceCard
-                        serviceName="Massagem Anti-stress"
-                        servicePrice="R$ 100,00/1h"
-                        serviceDescription="Serviço A sendo detalhado de forma simples."
-                    />
-
-                    <ServiceCard
-                        serviceName="Drenagem Linfática"
-                        servicePrice="R$ 100,00/1h"
-                        serviceDescription="Serviço A sendo detalhado de forma simples."
-                    />
-
-                    <ServiceCard
-                        serviceName="Aplicação e Confecção de Mega Hair Adesivo"
-                        servicePrice="R$ 100,00/1h"
-                        serviceDescription="Serviço A sendo detalhado de forma simples."
-                    />
 
                     <h2 className="divider-title" id="pacotes">Pacotes, pagamentos mensais</h2>
 
