@@ -24,7 +24,7 @@ export default function Home() {
                     <a href={address} target="_blank" id="endereco">Rua Endereço ABC, 123 - Bairro</a>
 
                     <div className="item-spaces">
-                        <NavLink to="/agendamento#topo">
+                        <NavLink to="/agendamento">
                             <ButtonIcon
                                 image="/ring-calendar.png"
                                 text="Agendar um horário"
@@ -123,7 +123,7 @@ export default function Home() {
                     </p>
 
                     <div className="item-spaces">
-                        <NavLink to="/agendamento#topo">
+                        <NavLink to="/agendamento">
                             <ButtonIcon
                                 image="/ring-calendar.png"
                                 text="Agendar um horário"

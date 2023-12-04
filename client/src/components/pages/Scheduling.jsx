@@ -49,6 +49,7 @@ export default function Scheduling() {
                 },
             });
             setInfoModalOpen(true)
+            window.location.href = '/obrigado'
         } catch (error) {
             console.log('Error', error);
             alert('Erro na Requisição', error);
