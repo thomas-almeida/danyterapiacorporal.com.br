@@ -49,7 +49,7 @@ export default function Scheduling() {
                 },
             });
             setInfoModalOpen(true)
-            window.location.href = '/obrigado'
+            window.location.href = '/agendamento#checked'
         } catch (error) {
             console.log('Error', error);
             alert('Erro na Requisição', error);
@@ -75,7 +75,7 @@ export default function Scheduling() {
                 ? [...prevData.servicos, value]
                 : prevData.servicos.filter((service) => service !== value)
         }))
-    }
+    }1
 
     return (
         <div className="container">
