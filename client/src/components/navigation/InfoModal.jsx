@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import ButtonIcon from "./ButtonIcon"
 
-export default function InfoModal({ info, message }) {
+export default function InfoModal({ info, message }, props) {
 
     const [isOpened, setModalOpen] = useState(true)
 
@@ -24,6 +25,7 @@ export default function InfoModal({ info, message }) {
                         image="/confirm.png"
                         text="Entendi"
                         method={closeModal}
+                        isVisible= {props.visibleButton}
                     />
                 </div>
             </div>
