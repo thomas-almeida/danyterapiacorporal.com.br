@@ -12,19 +12,31 @@
     font-family: 'League Spartarn', sans-serif;
 }
 
+body {
+    background-color: #ece7e4;
+}
+
+.banner-cover {
+    width: -webkit-fill-available;
+    text-align: center;
+    border: 1px solid #0000002b;
+    border-radius: 10px;
+    box-shadow: 1px 3px 4px #1f1f1f1a;
+}
+
 h1 {
     padding: 20px 0px;
     line-height: 120%;
-    color: #009ee9;
-    font-weight: bold;
+    color: #020201;
+    font-weight: 500;
 }
 
 h2 {
-    color: #009ee9;
+    color: #020201;
     font-family: League Spartan;
     font-size: 29px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
     padding: 20px 0px;
 }
@@ -54,8 +66,16 @@ p {
 
 #endereco {
     text-decoration: none;
-    color: #009ee9;
+    color: hsl(351deg 72.56% 69.23%);
     font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #02020291;
+    border-radius: 4px;
+}
+
+#space-bottom {
+    margin-bottom: 15px;
 }
 
 #whatsapp-button {
@@ -63,9 +83,9 @@ p {
     background: #25d366;
 }
 
-#instagram-button{
+#instagram-button {
     color: #fff;
-    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 
 .button {
@@ -85,7 +105,7 @@ p {
 
 .confirm-button {
     color: #fff;
-    background: #009ee9;
+    background: hsl(351deg 72.56% 69.23%);
 }
 
 .whatsapp-button {

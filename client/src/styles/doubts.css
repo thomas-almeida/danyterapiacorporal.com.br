@@ -11,7 +11,7 @@
 }
 
 .doubts-container-content {
-    background-color: #fff;
+    background-color: #ece7e4;
     position: absolute;
     bottom: 0;
     width: -webkit-fill-available;
@@ -54,13 +54,13 @@
 .accordion-head h3 {
     width: 75%;
     line-height: 25px;
-    color: #009ee9;
+    color: hsl(351deg 72.56% 69.23%);
 }
 
 .accordion-head span {
     width: 25%;
     text-align: center;
-    color: #009ee9;
+    color: hsl(351deg 72.56% 69.23%);
 }
 
 .accordion-head ion-icon {
