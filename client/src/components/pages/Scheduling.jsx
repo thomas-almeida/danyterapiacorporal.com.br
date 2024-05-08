@@ -39,7 +39,7 @@ export default function Scheduling() {
 
         const endpoints = {
             sendSchedule: "https://nino-scheduler-api.onrender.com/send-schedule",
-            createPaymentLink: "http://localhost:3001/create-payment-link"
+            createPaymentLink: "https://nino-scheduler-api.onrender.com/create-payment-link"
         }
 
         event.preventDefault()

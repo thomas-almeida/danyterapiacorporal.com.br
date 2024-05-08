@@ -16,7 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 <div className="container-content">
 
@@ -37,11 +37,13 @@ export default function Home() {
                                 text="Agendar um horário"
                             />
                         </NavLink>
-                        <ButtonIcon
-                            image="/whatsapp.png"
-                            text="Tirar Dúvidas no Whatsapp"
-                            specialStyleSheet="whatsapp-button"
-                        />
+                        <NavLink to="https://wa.link/ligqqv">
+                            <ButtonIcon
+                                image="/whatsapp.png"
+                                text="Tirar Dúvidas no Whatsapp"
+                                specialStyleSheet="whatsapp-button"
+                            />
+                        </NavLink>
                     </div>
 
                     <h2 className="divider-title">Serviços</h2>

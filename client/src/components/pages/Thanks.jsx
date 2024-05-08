@@ -20,7 +20,7 @@ export default function Thanks() {
                             specialStyleSheet="instagram-button"
                         />
                     </NavLink>
-                    <NavLink to="https://www.instagram.com/danyterapia/">
+                    <NavLink to="https://wa.link/ligqqv">
                         <ButtonIcon
                             image="/whatsapp.png"
                             text="Tirar Dúvidas no Whatsapp"
