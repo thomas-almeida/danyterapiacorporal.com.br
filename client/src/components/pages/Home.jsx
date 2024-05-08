@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom"
 import ServiceCard from "../ui/ServiceCard"
 import ButtonIcon from "../navigation/ButtonIcon"
 import services from "../options/services"
+import Navbar from "../navigation/Navbar"
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
 
     return (
         <>
+            <Navbar/>
             <div className="container">
                 <div className="container-content">
 
@@ -70,7 +72,7 @@ export default function Home() {
 
                     <div>
                         <p>
-                            Pacotes são atendimentos feitos no mes, voce escolhe entre os serviços e a cada semana garante seu atendimento com maior tranquilidade.
+                            Pacotes são atendimentos feitos no mes, você escolhe entre os serviços e a cada semana garante seu atendimento com maior tranquilidade.
                         </p>
 
                         <p>
@@ -80,7 +82,7 @@ export default function Home() {
                         <NavLink to="https://wa.link/ligqqv">
                             <ButtonIcon
                                 image="/whatsapp.png"
-                                text="Sobre Pacotes"
+                                text="Fale Conosco"
                                 specialStyleSheet="whatsapp-button"
                             />
                         </NavLink>
@@ -110,7 +112,7 @@ export default function Home() {
                     <br />
 
                     <p>
-                        Não deixe o bem-estar do seu corpo e mente para depois!, começe a cuidar de voce hoje mesmo!
+                        Não deixe o bem-estar do seu corpo e mente para depois!, começe a cuidar de você hoje mesmo!
                     </p>
 
                     <div className="item-spaces">

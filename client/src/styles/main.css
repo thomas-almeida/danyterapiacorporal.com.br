@@ -19,9 +19,9 @@ body {
 .banner-cover {
     width: -webkit-fill-available;
     text-align: center;
-    border: 1px solid #0000002b;
+    border: 1px solid #00000029;
     border-radius: 10px;
-    box-shadow: 1px 3px 4px #1f1f1f1a;
+    box-shadow: 1px 2px 9px #1f1f1f3b;
 }
 
 h1 {

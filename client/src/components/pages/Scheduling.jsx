@@ -6,6 +6,7 @@ import { format } from "date-fns"
 import ServicesOptions from "../options/ServiceOptions"
 import InfoModal from "../navigation/InfoModal"
 import services from "../options/services"
+import Navbar from "../navigation/Navbar"
 
 export default function Scheduling() {
 
@@ -20,12 +21,13 @@ export default function Scheduling() {
     })
 
     const [isInfoModalOpened, setInfoModalOpen] = useState(false)
+    const [isVisibleButton, setButtonVisible] = useState(true)
     const [isLoading, setloading] = useState(false)
 
 
     const messages = {
         successWithoutPay: 'Seu agendamento foi feito com sucesso!, em alguns instantes entraremos em contato para confirmar seu atendimento.',
-        successWithPay: 'Seu agendamento foi feito com sucesso!, o próximo passo é seguir com o pagamento. voce será redirecionado em alguns instantes'
+        successWithPay: 'Seu agendamento foi feito com sucesso!, o próximo passo é seguir com o pagamento. você será redirecionado em alguns instantes'
     }
 
     const modalInfos = {
@@ -85,6 +87,9 @@ export default function Scheduling() {
 
 
         if (formData.pagamento === "Pago no agendamento") {
+
+            setButtonVisible(false)
+
             try {
                 const response = await axios.post(endpoints.createPaymentLink, productsStripe, {
                     headers: {
@@ -133,77 +138,83 @@ export default function Scheduling() {
     }
 
     return (
-        <div className="container">
-            <div className="container-content" id="topo">
+        <>
+            <Navbar />
 
-                <h2 className="my-low">Agendar Horário</h2>
-                <p>
-                    Ao final do agendamento, voce receberá uma confirmação de horário no seu Whatsapp para que possamos confirmar sua presença.
-                </p>
+            <div className="container">
+                <div className="container-content" id="topo">
 
-                <div className="container my-low">
+                    <img className="banner-cover" src="/banner-schedule.png" alt="" />
 
-                    <form action="" method="POST" onSubmit={handleSubmit} disabled={isLoading}>
+                    <h2 className="my-low">Agendar Horário</h2>
+                    <p>
+                        Ao final do agendamento, você receberá uma confirmação de horário no seu Whatsapp para que possamos confirmar sua presença.
+                    </p>
 
-                        <label htmlFor="nome">Seu Nome</label>
-                        <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required />
+                    <div className="container my-low">
 
-                        <label htmlFor="whatsapp" id="whatsapp-label">Whatsapp</label>
-                        <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required />
+                        <form action="" method="POST" onSubmit={handleSubmit} disabled={isLoading}>
 
-                        <h4>Selecione o Serviço</h4>
-                        <p>
-                            Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a className="link" href="/#pacotes">por aqui.</a>
-                        </p>
-                        <ServicesOptions
-                            selectedServices={formData.servicos}
-                            onServiceChange={handleServiceChange}
-                        />
+                            <label htmlFor="nome">Seu Nome</label>
+                            <input type="text" name="nome" id="nome" onChange={handleInputChange} placeholder="Como prefere ser chamado(a)?" required />
 
-                        <label htmlFor="data">Selecione uma Data</label>
-                        <p className="tip"></p>
-                        <input type="date" name="data" id="data" onChange={handleInputChange} required />
+                            <label htmlFor="whatsapp" id="whatsapp-label">Whatsapp</label>
+                            <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required />
 
-                        <label htmlFor="horario">Selecione um Horário</label>
-                        <input type="time" name="horario" id="horario" onChange={handleInputChange} required />
-
-                        <label htmlFor="horario">Pagamento</label>
-                        <select
-                            title="pagamento"
-                            name="pagamento"
-                            id="pagamento"
-                            onChange={handleSelectChange}
-                        >
-                            <option value="Pago no agendamento">Efetuar pagamento a seguir</option>
-                            <option value="Pago no estabelecimento">Efetuar pagamento no estabelecimento</option>
-                        </select>
-
-                        <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
-                        <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />
-
-                        <input
-                            type="submit"
-                            className="button confirm-button"
-                            value={isLoading ? "Agendando..." : "Confirmar Agendamento"}
-                            disabled={isLoading}
-                        />
-
-                    </form>
-
-                    {
-                        isInfoModalOpened && (
-                            <InfoModal
-                                info={modalInfos.succesInfo}
-                                message={modalInfos.succesInfoMessage}
-                                visibleButton={formData.pagamento === 'Efetuar pagamento a seguir' ? true : false}
+                            <h4>Selecione o Serviço</h4>
+                            <p>
+                                Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a className="link" href="/#pacotes">por aqui.</a>
+                            </p>
+                            <ServicesOptions
+                                selectedServices={formData.servicos}
+                                onServiceChange={handleServiceChange}
                             />
-                        )
-                    }
 
+                            <label htmlFor="data">Selecione uma Data</label>
+                            <p className="tip"></p>
+                            <input type="date" name="data" id="data" onChange={handleInputChange} required />
+
+                            <label htmlFor="horario">Selecione um Horário</label>
+                            <input type="time" name="horario" id="horario" onChange={handleInputChange} required />
+
+                            <label htmlFor="horario">Pagamento</label>
+                            <select
+                                title="pagamento"
+                                name="pagamento"
+                                id="pagamento"
+                                onChange={handleSelectChange}
+                            >
+                                <option value="Pago no agendamento">Efetuar pagamento a seguir</option>
+                                <option value="Pago no estabelecimento">Efetuar pagamento no estabelecimento</option>
+                            </select>
+
+                            <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
+                            <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />
+
+                            <input
+                                type="submit"
+                                className="button confirm-button"
+                                value={isLoading ? "Agendando..." : "Confirmar Agendamento"}
+                                disabled={isLoading}
+                            />
+
+                        </form>
+
+                        {
+                            isInfoModalOpened && (
+                                <InfoModal
+                                    info={modalInfos.succesInfo}
+                                    message={modalInfos.succesInfoMessage}
+                                    visibleButton={isVisibleButton}
+                                />
+                            )
+                        }
+
+                    </div>
                 </div>
+
+
             </div>
-
-
-        </div>
+        </>
     )
 }

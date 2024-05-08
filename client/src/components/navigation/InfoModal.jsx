@@ -2,7 +2,7 @@
 import { useState } from "react"
 import ButtonIcon from "./ButtonIcon"
 
-export default function InfoModal({ info, message }) {
+export default function InfoModal({ info, message }, props) {
 
     const [isOpened, setModalOpen] = useState(true)
 
@@ -21,11 +21,15 @@ export default function InfoModal({ info, message }) {
                 <div className="info-modal-content">
                     <h2>{info}</h2>
                     <p>{message}</p>
-                    <ButtonIcon
-                        image="/confirm.png"
-                        text="Entendi"
-                        method={closeModal}
-                    />
+                    {
+                       
+                        props.visibleButton &&
+                        <ButtonIcon
+                            image="/confirm.png"
+                            text="Entendi"
+                            method={closeModal}
+                        />
+                    }
                 </div>
             </div>
         </>

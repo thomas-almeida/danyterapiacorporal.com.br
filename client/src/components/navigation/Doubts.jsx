@@ -28,7 +28,7 @@ export default function Doubts({ show, onClose }) {
 
                         <Accordion
                             doubtName="Qual o valor dos serviços?"
-                            doubtAnswer="Os valores variam de acordo com cada um dos tratamentos, voce pode encontrar os valores navegando no site"
+                            doubtAnswer="Os valores variam de acordo com cada um dos tratamentos, você pode encontrar os valores navegando no site"
                         />
 
                         <Accordion
