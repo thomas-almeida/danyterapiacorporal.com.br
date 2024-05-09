@@ -21,7 +21,6 @@ export default function Scheduling() {
     })
 
     const [isInfoModalOpened, setInfoModalOpen] = useState(false)
-    const [isVisibleButton, setButtonVisible] = useState(true)
     const [isLoading, setloading] = useState(false)
 
 
@@ -39,7 +38,6 @@ export default function Scheduling() {
 
         const endpoints = {
             sendSchedule: "https://nino-scheduler-api.onrender.com/send-schedule",
-            createPaymentLink: "https://nino-scheduler-api.onrender.com/create-payment-link"
         }
 
         event.preventDefault()
@@ -56,7 +54,6 @@ export default function Scheduling() {
             📅 Data: ${formatedDate},
             ⏱ Horário: ${formData.horario},
             💆🏻‍♀️ Serviços: ${formData.servicos.join(", ")},
-            💸 Pagamento:${formData.pagamento}
             🎟 Código: ${formData.indicacao || "Nenhum"}.`
         }
 
@@ -84,31 +81,6 @@ export default function Scheduling() {
                 productsStripe.products.push({ id: service.stripeId })
             }
         })
-
-
-        if (formData.pagamento === "Pago no agendamento") {
-
-            setButtonVisible(false)
-
-            try {
-                const response = await axios.post(endpoints.createPaymentLink, productsStripe, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                })
-
-                const paymentLink = response.data?.link
-
-                setTimeout(() => {
-                    window.location.href = paymentLink
-                }, 4000)
-
-            } catch (error) {
-                console.error('Erro: ', error)
-            }
-        }
-
-
     }
 
     const handleInputChange = (event) => {
@@ -126,14 +98,6 @@ export default function Scheduling() {
             servicos: checked
                 ? [...prevData.servicos, value]
                 : prevData.servicos.filter((service) => service !== value)
-        }))
-    }
-
-    const handleSelectChange = (event) => {
-        const { name, value } = event.target
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value
         }))
     }
 
@@ -161,32 +125,24 @@ export default function Scheduling() {
                             <label htmlFor="whatsapp" id="whatsapp-label">Whatsapp</label>
                             <input type="tel" name="whatsapp" id="whatsapp" onChange={handleInputChange} placeholder="Para mantermos contato" required />
 
-                            <h4>Selecione o Serviço</h4>
+                            <h4>Escolha o Atendimento</h4>
                             <p>
-                                Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a className="link" href="/#pacotes">por aqui.</a>
+                                Escolha os serviços que deseja e pague no estabelecimento, caso esteja procurando sobre pacotes entre em contato <a className="link" href="https://wa.link/ligqqv" target="blank">por aqui.</a>
                             </p>
+
                             <ServicesOptions
                                 selectedServices={formData.servicos}
                                 onServiceChange={handleServiceChange}
                             />
 
-                            <label htmlFor="data">Selecione uma Data</label>
+                            <p>Sobre o tempo da sessão do atendimento, não se preocupe, isso será perguntado a você para que possa combinar certinho no momento de confirmar seu agendamento.</p>
+
+                            <label htmlFor="data">Escolha uma Data</label>
                             <p className="tip"></p>
                             <input type="date" name="data" id="data" onChange={handleInputChange} required />
 
-                            <label htmlFor="horario">Selecione um Horário</label>
+                            <label htmlFor="horario">Escolha um Horário</label>
                             <input type="time" name="horario" id="horario" onChange={handleInputChange} required />
-
-                            <label htmlFor="horario">Pagamento</label>
-                            <select
-                                title="pagamento"
-                                name="pagamento"
-                                id="pagamento"
-                                onChange={handleSelectChange}
-                            >
-                                <option value="Pago no agendamento">Efetuar pagamento a seguir</option>
-                                <option value="Pago no estabelecimento">Efetuar pagamento no estabelecimento</option>
-                            </select>
 
                             <label htmlFor="indicacao">Código de Indicação (Opcional)</label>
                             <input type="text" name="indicacao" id="indicacao" onChange={handleInputChange} placeholder="Nome de quem nos indicou" />
@@ -205,7 +161,7 @@ export default function Scheduling() {
                                 <InfoModal
                                     info={modalInfos.succesInfo}
                                     message={modalInfos.succesInfoMessage}
-                                    visibleButton={isVisibleButton}
+                                    visibleButton={true}
                                 />
                             )
                         }

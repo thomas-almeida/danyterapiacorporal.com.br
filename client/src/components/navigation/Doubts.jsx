@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import Accordion from "./Accordion"
 import ButtonIcon from "./ButtonIcon"
@@ -18,12 +19,12 @@ export default function Doubts({ show, onClose }) {
 
                         <Accordion
                             doubtName="Quais os serviços oferecidos?"
-                            doubtAnswer="Os serviços oferecidos são: Serviço A, serviço B e serviço C, você pode ver todos eles navegando no site."
+                            doubtAnswer="Os serviços oferecidos são: Massagem Terapéutica, Massagem Anti-Stress, Massagem Relaxante e Drenagem linfática, você pode ver todos eles navegando na nossa página inicial!."
                         />
 
                         <Accordion
                             doubtName="Como funciona o agendamento?"
-                            doubtAnswer="O pagamento é feito ao chegar no local, antes do seu atendimento marcado."
+                            doubtAnswer="Escolha quais tratamentos tem interesse no momento do agendamento, após isso, entraremos em contato para confirmar seu agendamento pelo telefone fornecido."
                         />
 
                         <Accordion
@@ -33,7 +34,7 @@ export default function Doubts({ show, onClose }) {
 
                         <Accordion
                             doubtName="Quanto tempo duram as sessões?"
-                            doubtAnswer="As sessões duram cerca de 1 hora cada."
+                            doubtAnswer="Temos sessões que variam de 30 minutos á 1 hora."
                         />
 
                     </div>
