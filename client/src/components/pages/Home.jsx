@@ -8,10 +8,13 @@ import Navbar from "../navigation/Navbar"
 
 export default function Home() {
 
-    const address = 'https://www.google.com.br/maps/place/R.+Clevel%C3%A2ndia,+128a+-+Cidade+Patriarca,+S%C3%A3o+Paulo+-+SP,+03555-050/@-23.5383317,-46.5014327,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce60b5234cb645:0x1029950f1ac6c1c!8m2!3d-23.5383366!4d-46.4988578!16s%2Fg%2F11fkr31j57?entry=ttu'
+    const address = 'https://www.google.com.br/maps/place/R.+Cubat%C3%A3o,+193+-+Vila+Mariana,+S%C3%A3o+Paulo+-+SP,+04013-040/@-23.5737921,-46.6471393,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5996e55e22b5:0xa080edeb3befea3!8m2!3d-23.573797!4d-46.6445644!16s%2Fg%2F11c298fzks?entry=ttu'
 
     const images = [
-        '/room-1.jpg', '/room-2.jpg'
+        '/room-01.jpeg', 
+        '/room-02.jpeg',
+        '/room-03.jpeg',
+
     ]
 
     return (
@@ -28,7 +31,7 @@ export default function Home() {
                         Cuide de você com Terapia Corporal e melhore sua qualidade de vida, agende um horário para cuidar do seu bem-estar.
                     </p>
 
-                    <a href={address} target="_blank" id="endereco">Veja Como Chegar 👆🏻</a>
+                    <a href={address} target="_blank" id="endereco"> 🚩 Rua Cubatão 193 Sala 02 - Sobre Loja</a>
 
                     <div className="item-spaces">
                         <NavLink to="/agendamento">
@@ -46,7 +49,7 @@ export default function Home() {
                         </NavLink>
                     </div>
 
-                    <h2 className="divider-title">Serviços</h2>
+                    <h2 className="divider-title">Atendimentos</h2>
 
                     <p>
                         Trabalhamos com agendamentos e pacotes, onde você consegue utilizar vários serviços em um atendimento só.
@@ -61,7 +64,10 @@ export default function Home() {
                                     <ServiceCard
                                         key={service.id}
                                         serviceName={service.name}
-                                        servicePrice={service.price}
+                                        ServicePriceOne={service.priceOne}
+                                        ServicePriceOneTime={service.priceOneTime}
+                                        ServicePriceTwo={service.priceTwo}
+                                        ServicePriceTwoTime={service.priceTwoTime}
                                         serviceDescription={service.description}
                                     />
                                 )
@@ -93,13 +99,16 @@ export default function Home() {
                     <br />
                     <h2 className="divider-title">Dany</h2>
 
+                    <img className="banner-cover" src="/dany-bg.png" alt="" />
+
                     <p>
-                        Empreendedora no ramo da estética corporal há mais de 8 anos  e com mais de 500 clientes satisfeitos, Lorem Ipsum conta com um espaço de Lorem Ipsum aconchegante e de fácil acesso, pronto para fazer com que sua experiencia traga o maior bem-estar possível.
+                        Empreendedora no ramo da estética corporal há mais de 8 anos e com mais de 500 clientes satisfeitos, conta com um espaço aconchegante e de fácil acesso, pronto para fazer com que sua experiencia traga o maior bem-estar possível.
                     </p>
 
                     <div className="image-galery">
                         <img src={images[0]} alt="Terapia corporal - local de atendimento" />
                         <img src={images[1]} alt="Terapia corporal - local de atendimento" />
+                        <img src={images[2]} alt="Terapia corporal - local de atendimento" />
                     </div>
 
                     <NavLink to="https://www.instagram.com/danyterapia/">
